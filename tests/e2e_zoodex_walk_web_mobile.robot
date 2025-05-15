@@ -75,6 +75,8 @@ ${LAST_VENDOR}    id=vendor-card-GardenofMeysamKhanRestaurant
 ${MAP_VENDOR}    id=marker-vendor-Higer
 ${MAP_VENDOR_FLOAT}    id=map-vendor-Higer
 ${BOTTOM}    id=bottom
+${CLOSEST}    id=where-to-go-where_to_go_closest
+${SUBMIT_LOCATION_BUTTON}    id=submit-location
 
 *** Test Cases ***
 E2E: Zoodex Walk User Search Vendor And Order
@@ -182,13 +184,14 @@ Reservation And Enter Persons
     END
     Click Button    ${ENTER_RESERVATION_BUTTON}
 
-Chech Box Test
+Chech Box Test 
     [Documentation]    zoodex payment check box ,check
     Wait Until Element Is Visible    ${CHECK_BOX}    ${TIMEOUT}
     Sleep    2s
     Click Element    ${CHECK_BOX}
     Sleep    2s
     Click Element    ${CHECK_BOX}
+    Execute Javascript    window.scrollBy(0, 200)
 
 Back To Menu Into The Cart
     [Documentation]    return to menu from cart ,and click buttons
@@ -287,7 +290,7 @@ Switch Between Navigation Bar Items
     [Documentation]    check navigation bar is working and more actions
     Wait Until Element Is Visible    ${HOME}    ${TIMEOUT}
     Click Element    ${HOME}
-    Scroll To Last Vendor
+    Scroll To Last Vendor And Select Location
     Wait Until Element Is Visible    ${MAP}    ${TIMEOUT}
     Click Element    ${MAP}
     Select Map Vendor
@@ -297,10 +300,16 @@ Switch Between Navigation Bar Items
     Wait Until Element Is Visible    ${GO_BACK}    ${TIMEOUT}
     Click Element    ${GO_BACK}
 
-Scroll To Last Vendor 
-    [Documentation]    Scroll To Last Vendor and check it
+Scroll To Last Vendor And Select Location
+    [Documentation]    Scroll To Last Vendor ,click on closest vendor button select location and check all
     Wait Until Element Is Visible    ${SEARCH}    ${TIMEOUT}
-    Execute Javascript    window.scrollBy(0, 800)
+    Wait Until Element Is Visible    ${CLOSEST}    ${TIMEOUT}
+    Click Element    ${CLOSEST}
+    Sleep    3s
+    Click Element    ${SUBMIT_LOCATION_BUTTON}
+    Sleep    2s
+    Scroll Element Into View    ${LAST_VENDOR}
+    Sleep    3s
     Wait Until Element Is Visible    ${LAST_VENDOR}    ${TIMEOUT}
     Click Element    ${LAST_VENDOR}
     Wait Until Element Is Visible    ${VENDOR_BACK_BUTTON}    ${TIMEOUT}
