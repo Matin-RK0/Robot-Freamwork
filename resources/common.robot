@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource    ../variables/env_vars.robot
+Resource   ../variables/env_vars.robot
 
 *** Keywords ***
 Initialize Browser

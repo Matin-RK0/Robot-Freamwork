@@ -2,81 +2,13 @@
 Library           SeleniumLibrary
 Resource          ../variables/env_vars.robot
 Resource          ../resources/common.robot
+Resource          ../variables/pub_variables.robot
 Suite Setup       Initialize Mobile Browser
 Test Setup        Go To Zoodex Walk
 Test Teardown     Capture Page Screenshot
 Suite Teardown    Close All Browsers
 
 *** Variables ***
-${SEARCH}    id=index-search
-${SEARCH_BOX}    id=search-input
-${SEARCH_WORD}    پیتزا
-${FIRST_SEARCH_RESULT}    id=product-532388
-${ADD_BUTTON1}    id=product-add-532388
-${GO_BACK_BUTTON}    id=product-detail-back
-${CLOSE_SEARCH_BUTTON}    id=search-close
-${PLUS_BUTTON1}    id=plus-product-532388
-${FIRST_VENDOR}    id=vendor-card-GardenofMeysamKhanRestaurant
-${SHOW_MENU_BUTTON}    id=vendor-index-go-to-menu
-${MENU_TAB1}    id=nav-58140
-${MENU_TAB2}    id=nav-58138
-${MENU_TAB3}    id=nav-58129
-${ADD_BUTTON2}    id=product-add-850274
-${EMPTY_CARD}    id=remove-current-cart
-${PLUS_BUTTON2}    id=plus-product-850274
-${CARD_BUTTON}    id=vendor-menu-go-to-cart
-${NEGATIVE_BUTTON}    id=minus-product-850274 
-${DESCRIPTION}    id=cart-description-textarea
-${DESCRIPTION_TEXT}    میز سر تایم اماده باشد
-${CONTINUE_ORDER_BUTTON}    id=cart-go-to-checkout
-${PHONE_NUMBER_BOX}    id=شماره همراه
-${ENTER_PH_BUTTON}    id=submit-otp
-${1PERSON}    id=reserve-count-1
-${2PERSON}    id=reserve-count-2
-${3PERSON}    id=reserve-count-3
-${4PERSON}    id=reserve-count-4
-${ENTER_RESERVATION_BUTTON}    id=submit-reserve
-${CHECK_BOX}    id=zoodex-balance
-${COMPLETE_CARD_BACK_BUTTON}    id=go-back
-${TRASH_BUTTON}    id=cart-trash
-${DEELTE_CARD_BUTTON}    id=cart-remove-all
-${MENU_BACK_BUTTON}    id=menu-back-to
-${VENDOR_BACK_BUTTON}    id=vendor-index-go-back
-${PROFILE}   id=nav-user
-${PERSONAL_INFORMATION}    id=prime-user
-${EDIT_INFO_BUTTON}    id=profile-edit-personal-info
-${EDIT_BANK_INFO_BUTTON}    id=profile-edit-bank-info
-${TF_NAME}    id=نام و نام خانوادگی
-${NAME}    متین رمضانی کریم
-${TF_ID_CARD_NUMBER}    id=کد ملی
-${TF_EMAIL}    id=پست الکترونیک
-${EMAIL}    matin007.rk@gmail.com
-${TF_BIRTHDAY}    id=تاریخ تولد
-${ID_CARD_NUMBER}    2981441922
-${SUBMIT_BUTTON}    id=submit-edit-personal-info
-${CLOSE_BD_POPUP_BUTTON}    id=close-popup
-${TF_BANK_CARD_NUM}    id=شماره کارت
-${CARD_NUM}    5041721237791521
-${SHABA_NUM}   550700010001113123044001
-${TF_SHABA_NUM}    id=شماره شبا
-${SUBMIT_BANK_INFORMATION_BUTTON}    id=submit-edit-bank-info
-${GO_BACK}    id=go-back
-${FAVORITS}    id=prime-heart
-${FEEDBACKS}    id=prime-comments
-${PAYMENTS}    id=prime-group
-${CALL_US}    id=prime-phone
-${PRIVACY}    id=prime-privacy
-${ABOUT_US}    id=prime-about-us
-${TICKETS}    id=prime-ticket
-${HOME}    id=nav-home
-${MAP}    id=nav-collections-map
-${ORDERS}    id=nav-orders
-${LAST_VENDOR}    id=vendor-card-GardenofMeysamKhanRestaurant
-${MAP_VENDOR}    id=marker-vendor-Higer
-${MAP_VENDOR_FLOAT}    id=map-vendor-Higer
-${BOTTOM}    id=bottom
-${CLOSEST}    id=where-to-go-where_to_go_closest
-${SUBMIT_LOCATION_BUTTON}    id=submit-location
 
 *** Test Cases ***
 E2E: Zoodex Walk User Search Vendor And Order
