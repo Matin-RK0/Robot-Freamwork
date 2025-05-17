@@ -13,7 +13,7 @@ Initialize Mobile Browser
     ${mobile_emulation}    Create Dictionary    deviceName    Pixel 2
     ${options}    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys,selenium.webdriver
     Call Method    ${options}    add_experimental_option    mobileEmulation    ${mobile_emulation}
-    Open Browser    ${ZOODEX_URL}    ${BROWSER}    options=${options}
+    Open Browser    ${WALK_URL}    ${BROWSER}    options=${options}
 
 Cleanup Browser
     [Documentation]    Close all browsers
