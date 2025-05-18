@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource   ../variables/env_vars.robot
+Resource   ../variables/pub_variables.robot
 
 *** Keywords ***
 Initialize Browser
@@ -56,3 +57,25 @@ Select Location Mobile
     Sleep    3s
     Click Button    ${SELECT_LOCATION_BUTTON_M}
 
+Login User
+    Sleep    3s
+    Wait Until Element Is Visible    ${NAV_LOGIN}    ${TIMEOUT}
+    Click Element    ${NAV_LOGIN}
+    Wait Until Element Is Visible    ${PHONE_NUMBER_BOX}    ${TIMEOUT}
+    Input Text    ${PHONE_NUMBER_BOX}    ${PHONE_NUMBER}
+    Sleep    2s
+    Wait Until Element Is Visible    ${ENTER_PH_BUTTON}    ${TIMEOUT}
+    Click Element    ${ENTER_PH_BUTTON}
+    Sleep    10s
+    Wait Until Element Is Visible    ${PROFILE}    ${TIMEOUT}
+
+Open Vendor
+    Scroll Element Into View    ${LAST_VENDOR}
+    Sleep    3s
+    Wait Until Element Is Visible    ${LAST_VENDOR}    ${TIMEOUT}
+    Click Element    ${LAST_VENDOR}
+
+Go To First Vendor
+    [Documentation]    Open first vendor
+    Wait Until Element Is Visible    ${FIRST_VENDOR}    ${TIMEOUT}
+    Click Element    ${FIRST_VENDOR}

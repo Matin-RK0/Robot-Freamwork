@@ -51,12 +51,6 @@ Close Search
     #Wait Until Element Is Visible   ${CLOSE_SEARCH_BUTTON}    ${TIMEOUT}
     #Click Element    ${CLOSE_SEARCH_BUTTON}
 
-Go To First Vendor
-    [Documentation]    Open first vendor
-    Wait Until Element Is Visible    ${FIRST_VENDOR}    ${TIMEOUT}
-    Click Element    ${FIRST_VENDOR}
-
-
 Go To Menu Select a Food ,And Empty Order
     [Documentation]    Go to vedor menu and switch between tabs ,add food to cart ,add more food ,go to card
     Wait Until Element Is Visible    ${SHOW_MENU_BUTTON}    ${TIMEOUT}
