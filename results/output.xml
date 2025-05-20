@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-19T15:28:45.876648" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-20T10:55:05.775638" rpa="false" schemaversion="5">
 <suite id="s1" name="My Robot Project" source="C:\Users\MatinRK\Documents\my_robot_project">
 <suite id="s1-s1" name="Tests" source="C:\Users\MatinRK\Documents\my_robot_project\tests">
-<suite id="s1-s1-s1" name="Idk" source="C:\Users\MatinRK\Documents\my_robot_project\tests\idk">
-<suite id="s1-s1-s1-s1" name="Credit Circulation" source="C:\Users\MatinRK\Documents\my_robot_project\tests\idk\credit_circulation.robot">
+<suite id="s1-s1-s1" name="Walk Flows" source="C:\Users\MatinRK\Documents\my_robot_project\tests\walk flows">
+<suite id="s1-s1-s1-s1" name="Search Submit Order" source="C:\Users\MatinRK\Documents\my_robot_project\tests\walk flows\search_submit_order.robot">
 <kw name="Initialize Mobile Browser" owner="common" type="SETUP">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-05-19T15:28:46.194540" level="INFO">${mobile_emulation} = {'deviceName': 'Pixel 2'}</msg>
+<msg time="2025-05-20T10:55:06.128405" level="INFO">${mobile_emulation} = {'deviceName': 'Pixel 2'}</msg>
 <var>${mobile_emulation}</var>
 <arg>deviceName</arg>
 <arg>Pixel 2</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-05-19T15:28:46.194083" elapsed="0.000653"/>
+<status status="PASS" start="2025-05-20T10:55:06.127503" elapsed="0.001357"/>
 </kw>
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-05-19T15:28:46.195437" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000240A58DE660&gt;</msg>
+<msg time="2025-05-20T10:55:06.129863" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000141CE536510&gt;</msg>
 <var>${options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys,selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-05-19T15:28:46.194988" elapsed="0.000605"/>
+<status status="PASS" start="2025-05-20T10:55:06.129195" elapsed="0.001159"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${options}</arg>
@@ -27,453 +27,120 @@
 <arg>mobileEmulation</arg>
 <arg>${mobile_emulation}</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-05-19T15:28:46.195796" elapsed="0.000299"/>
+<status status="PASS" start="2025-05-20T10:55:06.130638" elapsed="0.000757"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:28:46.196709" level="INFO">Opening browser 'chrome' to base url 'https://zoodexwalk.ir'.</msg>
+<msg time="2025-05-20T10:55:06.132251" level="INFO">Opening browser 'chrome' to base url 'https://zoodexwalk.ir'.</msg>
 <arg>${WALK_URL}</arg>
 <arg>${BROWSER}</arg>
 <arg>options=${options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-19T15:28:46.196322" elapsed="25.241034"/>
+<status status="PASS" start="2025-05-20T10:55:06.131654" elapsed="6.549477"/>
 </kw>
-<status status="PASS" start="2025-05-19T15:28:46.193229" elapsed="25.244474"/>
+<status status="PASS" start="2025-05-20T10:55:06.125605" elapsed="6.555911"/>
 </kw>
-<test id="s1-s1-s1-s1-t1" name="Credit Circulatin Test" line="12">
+<test id="s1-s1-s1-s1-t1" name="Search Submit Order Test" line="12">
 <kw name="Go To Zoodex Walk" owner="common" type="SETUP">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:29:11.440388" level="INFO">Opening url 'https://zoodexwalk.ir'</msg>
+<msg time="2025-05-20T10:55:12.687940" level="INFO">Opening url 'https://zoodexwalk.ir'</msg>
 <arg>${WALK_URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-05-19T15:29:11.440013" elapsed="0.068296"/>
+<status status="PASS" start="2025-05-20T10:55:12.687057" elapsed="0.160022"/>
 </kw>
 <doc>Go to zoodex walk</doc>
-<status status="PASS" start="2025-05-19T15:29:11.439394" elapsed="0.069135"/>
+<status status="PASS" start="2025-05-20T10:55:12.685401" elapsed="0.162342"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-19T15:29:14.510268" level="INFO">Slept 3 seconds.</msg>
+<msg time="2025-05-20T10:55:15.849752" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-19T15:29:11.508959" elapsed="3.002548"/>
+<status status="PASS" start="2025-05-20T10:55:12.848357" elapsed="3.001887"/>
 </kw>
-<kw name="Login User" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-20T10:55:15.851248" elapsed="0.051692"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-20T10:55:15.903974" level="INFO">Clicking element 'id=index-search'.</msg>
+<arg>${SEARCH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T10:55:15.903492" elapsed="0.202318"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SEARCH_BOX}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-20T10:55:16.106428" elapsed="0.475107"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T10:55:16.582591" level="INFO">Typing text 'پیتزا' into text field 'id=search-input'.</msg>
+<arg>${SEARCH_BOX}</arg>
+<arg>${SEARCH_WORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T10:55:16.582029" elapsed="0.118065"/>
+</kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-19T15:29:17.522036" level="INFO">Slept 3 seconds.</msg>
+<msg time="2025-05-20T10:55:19.701591" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-19T15:29:14.519327" elapsed="3.003918"/>
+<status status="PASS" start="2025-05-20T10:55:16.700942" elapsed="3.001017"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${NAV_LOGIN}</arg>
+<arg>${FIRST_SEARCH_RESULT}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-19T15:29:17.524347" elapsed="0.148460"/>
+<status status="PASS" start="2025-05-20T10:55:19.702606" elapsed="0.081424"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:29:17.674638" level="INFO">Clicking element 'id=nav-login'.</msg>
-<arg>${NAV_LOGIN}</arg>
+<msg time="2025-05-20T10:55:19.785342" level="INFO">Clicking element 'id=product-532388'.</msg>
+<arg>${FIRST_SEARCH_RESULT}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:29:17.673514" elapsed="0.184392"/>
+<status status="PASS" start="2025-05-20T10:55:19.784623" elapsed="0.201481"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${PHONE_NUMBER_BOX}</arg>
+<arg>${ADD_BUTTON1}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-19T15:29:17.858516" elapsed="4.322093"/>
+<status status="PASS" start="2025-05-20T10:55:19.986885" elapsed="0.211679"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:29:22.181985" level="INFO">Typing text '09130424612' into text field 'id=شماره همراه'.</msg>
-<arg>${PHONE_NUMBER_BOX}</arg>
-<arg>${PHONE_NUMBER}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:29:22.181289" elapsed="0.169566"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-19T15:29:24.352519" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-19T15:29:22.351245" elapsed="2.002619"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-20T10:55:20.200157" level="INFO">Clicking element 'id=product-add-532388'.</msg>
+<arg>${ADD_BUTTON1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T10:55:20.199214" elapsed="0.359660"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${ENTER_PH_BUTTON}</arg>
+<arg>${PLUS_BUTTON1}</arg>
 <arg>${TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-19T15:29:24.354739" elapsed="0.038042"/>
+<status status="PASS" start="2025-05-20T10:55:20.561066" elapsed="0.030476"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:29:24.393457" level="INFO">Clicking element 'id=submit-otp'.</msg>
-<arg>${ENTER_PH_BUTTON}</arg>
+<msg time="2025-05-20T10:55:20.594375" level="INFO">Clicking element 'id=plus-product-532388'.</msg>
+<arg>${PLUS_BUTTON1}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:29:24.393066" elapsed="0.159287"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-19T15:29:34.553917" level="INFO">Slept 10 seconds.</msg>
-<arg>10s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-19T15:29:24.552773" elapsed="10.002277"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${PROFILE}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-19T15:29:34.555947" elapsed="6.885541"/>
-</kw>
-<status status="PASS" start="2025-05-19T15:29:14.514456" elapsed="26.927377"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:29:41.443453" level="INFO">Clicking element 'id=nav-user'.</msg>
-<arg>${PROFILE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:29:41.442592" elapsed="0.145038"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-19T15:29:43.589448" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-19T15:29:41.588095" elapsed="2.002556"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${PAYMENTS}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-19T15:29:43.593290" elapsed="0.107017"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:29:43.703614" level="INFO">Clicking element 'id=prime-group'.</msg>
-<arg>${PAYMENTS}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:29:43.702141" elapsed="0.180367"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${INCREASE_WALLET}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-19T15:29:43.883410" elapsed="2.336384"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:29:46.221328" level="INFO">Clicking element 'id=increase-wallet'.</msg>
-<arg>${INCREASE_WALLET}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:29:46.220600" elapsed="0.155883"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-19T15:29:47.378273" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-19T15:29:46.377339" elapsed="1.002563"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:29:47.385869" level="INFO">Clicking element 'id=increase-price'.</msg>
-<arg>${INCREASE_PRICE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:29:47.383241" elapsed="0.186596"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-19T15:29:48.571782" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-19T15:29:47.570331" elapsed="1.002294"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:29:48.575696" level="INFO">Clicking element 'id=increase-price'.</msg>
-<arg>${INCREASE_PRICE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:29:48.574254" elapsed="0.177214"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-19T15:29:49.753431" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-19T15:29:48.751929" elapsed="1.002667"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:29:49.760020" level="INFO">Clicking element 'id=increase-price'.</msg>
-<arg>${INCREASE_PRICE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:29:49.757081" elapsed="0.179906"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-19T15:29:50.938404" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-19T15:29:49.937510" elapsed="1.001290"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:29:50.940160" level="INFO">Clicking element 'id=decrease-price'.</msg>
-<arg>${DECREASE_PRICE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:29:50.939505" elapsed="0.179656"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-19T15:29:52.120910" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-19T15:29:51.119988" elapsed="1.001404"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:29:52.122763" level="INFO">Clicking element 'id=decrease-price'.</msg>
-<arg>${DECREASE_PRICE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:29:52.122092" elapsed="0.183670"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-19T15:29:53.308715" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-19T15:29:52.306569" elapsed="1.005224"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:29:53.316214" level="INFO">Clicking element 'id=decrease-price'.</msg>
-<arg>${DECREASE_PRICE}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:29:53.314104" elapsed="0.266145"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-19T15:29:54.584929" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-19T15:29:53.582540" elapsed="1.002826"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${PRICE_5000}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-19T15:29:54.586036" elapsed="0.029954"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:29:54.616946" level="INFO">Clicking element 'id=price-5000'.</msg>
-<arg>${PRICE_5000}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:29:54.616473" elapsed="0.197648"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-19T15:29:55.816031" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-19T15:29:54.815029" elapsed="1.002154"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:29:55.822562" level="INFO">Clicking element 'id=price-10000'.</msg>
-<arg>${PRICE_10000}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:29:55.820438" elapsed="0.258276"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-19T15:29:57.083165" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-19T15:29:56.080923" elapsed="1.003355"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:29:57.088806" level="INFO">Clicking element 'id=price-20000'.</msg>
-<arg>${PRICE_20000}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:29:57.086815" elapsed="0.188119"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-19T15:29:58.277318" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-19T15:29:57.275961" elapsed="1.002241"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:29:58.281225" level="INFO">Clicking element 'id=price-50000'.</msg>
-<arg>${PRICE_50000}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:29:58.279708" elapsed="0.279671"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-19T15:29:59.565543" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-19T15:29:58.562676" elapsed="1.004272"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:29:59.572214" level="INFO">Clicking element 'id=price-100000'.</msg>
-<arg>${PRICE_100000}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:29:59.569974" elapsed="0.221617"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-19T15:30:00.795000" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-19T15:29:59.793196" elapsed="1.003237"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:30:00.801461" level="INFO">Clicking element 'id=price-200000'.</msg>
-<arg>${PRICE_200000}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:30:00.799496" elapsed="0.257750"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-19T15:30:02.060509" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-19T15:30:01.058367" elapsed="1.003338"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:30:02.066446" level="INFO">Clicking element 'id=close-popup'.</msg>
-<arg>${CLOSE_BD_POPUP_BUTTON}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:30:02.064023" elapsed="0.222258"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${TRANSFER_CREDIT}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-19T15:30:02.286974" elapsed="0.040931"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:30:02.329371" level="INFO">Clicking element 'id=transfer-credit'.</msg>
-<arg>${TRANSFER_CREDIT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:30:02.328649" elapsed="0.370193"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${1}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-19T15:30:02.699564" elapsed="0.665070"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:30:03.365592" level="INFO">Clicking element 'id=1'.</msg>
-<arg>${1}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:30:03.365173" elapsed="0.148179"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-19T15:30:04.514976" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-19T15:30:03.514006" elapsed="1.002110"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:30:04.521472" level="INFO">Clicking element 'id=3'.</msg>
-<arg>${3}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:30:04.519486" elapsed="0.159765"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${TF_AMOUNT}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-19T15:30:04.679707" elapsed="0.025921"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:30:04.707552" level="INFO">Typing text 'تست' into text field 'id=مبلغ'.</msg>
-<arg>${TF_AMOUNT}</arg>
-<arg>${TEST_WORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:30:04.706770" elapsed="0.147439"/>
-</kw>
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>${TF_AMOUNT}</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:30:04.854706" elapsed="0.042517"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${TF_DES}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-19T15:30:04.897700" elapsed="0.025305"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:30:04.925074" level="INFO">Typing text 'تست' into text field 'id=توضیحات'.</msg>
-<arg>${TF_DES}</arg>
-<arg>${TEST_WORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:30:04.924004" elapsed="0.122236"/>
-</kw>
-<kw name="Clear Element Text" owner="SeleniumLibrary">
-<arg>${TF_DES}</arg>
-<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:30:05.046796" elapsed="0.040390"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:30:05.088133" level="INFO">Clicking element 'id=cancel-transfer'.</msg>
-<arg>${CANCEL_BUTTON}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:30:05.087715" elapsed="0.165350"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${TRANSACTION}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-19T15:30:05.254172" elapsed="0.065569"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:30:05.320618" level="INFO">Clicking element 'id=transactions'.</msg>
-<arg>${TRANSACTION}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:30:05.320224" elapsed="0.164128"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-19T15:30:07.486564" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-19T15:30:05.484837" elapsed="2.002936"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${GO_BACK}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-19T15:30:07.490587" elapsed="0.043268"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:30:07.534745" level="INFO">Clicking element 'id=go-back'.</msg>
-<arg>${GO_BACK}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:30:07.534353" elapsed="0.161166"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-05-19T15:30:09.697225" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-05-19T15:30:07.696072" elapsed="2.002357"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${BANK_INFORMATION}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-19T15:30:09.700771" elapsed="0.043944"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:30:09.745656" level="INFO">Clicking element 'id=bank-info'.</msg>
-<arg>${BANK_INFORMATION}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:30:09.745215" elapsed="0.151849"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${MENU_BACK_BUTTON}</arg>
-<arg>${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-05-19T15:30:09.897804" elapsed="0.249522"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-05-19T15:30:10.148320" level="INFO">Clicking element 'id=menu-back-to'.</msg>
-<arg>${MENU_BACK_BUTTON}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-19T15:30:10.147863" elapsed="0.162695"/>
+<status status="PASS" start="2025-05-20T10:55:20.592529" elapsed="0.283941"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary" type="TEARDOWN">
-<msg time="2025-05-19T15:30:10.517433" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-66.png"&gt;&lt;img src="selenium-screenshot-66.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-20T10:55:21.399621" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-77.png"&gt;&lt;img src="selenium-screenshot-77.png" width="800px"&gt;&lt;/a&gt;</msg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-05-19T15:30:10.311225" elapsed="0.206609"/>
+<status status="PASS" start="2025-05-20T10:55:20.877993" elapsed="0.522237"/>
 </kw>
-<status status="PASS" start="2025-05-19T15:29:11.437947" elapsed="59.080465"/>
+<status status="PASS" start="2025-05-20T10:55:12.681875" elapsed="8.718860"/>
 </test>
 <kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-05-19T15:30:10.520448" elapsed="6.452636"/>
+<status status="PASS" start="2025-05-20T10:55:21.403263" elapsed="6.521510"/>
 </kw>
-<status status="PASS" start="2025-05-19T15:28:45.914515" elapsed="91.059307"/>
+<status status="PASS" start="2025-05-20T10:55:05.842413" elapsed="22.082647"/>
 </suite>
-<status status="PASS" start="2025-05-19T15:28:45.910491" elapsed="91.066741"/>
+<status status="PASS" start="2025-05-20T10:55:05.839349" elapsed="22.088471"/>
 </suite>
-<status status="PASS" start="2025-05-19T15:28:45.907978" elapsed="91.070942"/>
+<status status="PASS" start="2025-05-20T10:55:05.833343" elapsed="22.096985"/>
 </suite>
-<status status="PASS" start="2025-05-19T15:28:45.881584" elapsed="91.099201"/>
+<status status="PASS" start="2025-05-20T10:55:05.784790" elapsed="22.147574"/>
 </suite>
 <statistics>
 <total>
@@ -484,8 +151,8 @@
 <suite>
 <stat name="My Robot Project" id="s1" pass="1" fail="0" skip="0">My Robot Project</stat>
 <stat name="Tests" id="s1-s1" pass="1" fail="0" skip="0">My Robot Project.Tests</stat>
-<stat name="Idk" id="s1-s1-s1" pass="1" fail="0" skip="0">My Robot Project.Tests.Idk</stat>
-<stat name="Credit Circulation" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">My Robot Project.Tests.Idk.Credit Circulation</stat>
+<stat name="Walk Flows" id="s1-s1-s1" pass="1" fail="0" skip="0">My Robot Project.Tests.Walk Flows</stat>
+<stat name="Search Submit Order" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">My Robot Project.Tests.Walk Flows.Search Submit Order</stat>
 </suite>
 </statistics>
 <errors>

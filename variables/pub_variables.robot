@@ -94,3 +94,7 @@ ${CANCEL_BUTTON}    id=cancel-transfer
 ${TRANSACTION}    id=transactions
 ${BANK_INFORMATION}    id=bank-info
 ${TEST_WORD}    تست
+${PROFILE_LOGOUT}    id=profile-logout
+${SUBMIT_LOGOUT}    id=submit-logout
+${LIKE_VENDOR}    id=like-vendor
+${FAVORITE_VENDOR}    id=vendor-BamCafe
